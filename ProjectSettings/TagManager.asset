@@ -41,9 +41,18 @@ TagManager:
   - name: Background
     uniqueID: 1005554859
     locked: 0
-  - name: Platform
-    uniqueID: 2200957297
+  - name: Clouds
+    uniqueID: 2089729199
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 3641168615
+    locked: 0
+  - name: Platform
+    uniqueID: 2200957297
+    locked: 0
+  - name: Objects
+    uniqueID: 2543167881
     locked: 0
