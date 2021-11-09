@@ -6,14 +6,21 @@ public class PlayerMovment : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Animator anim;
+    private SpriteRenderer sprite;
 
     private float dirX = 0f;
+    [SerializeField] private float moveSpeed = 7f;
+    [SerializeField] private float jumpForce = 10f; 
+
+    private enum MovementState { idle, running, jumping }
+  
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -21,12 +28,12 @@ public class PlayerMovment : MonoBehaviour
     {
 
         dirX = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(dirX * 7f, rb.velocity.y);
+        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
 
 
         if (Input.GetKeyDown("space"))
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector3(rb.velocity.x, 10, 0);
+            GetComponent<Rigidbody2D>().velocity = new Vector3(rb.velocity.x, jumpForce, 0);
         }
 
         UpdateAnimationUpdate();
@@ -34,18 +41,31 @@ public class PlayerMovment : MonoBehaviour
 
     private void UpdateAnimationUpdate()
     {
+        MovementState state;
+
             if (dirX > 0f)
             {
-                anim.SetBool("Running", true);
+                state = MovementState.running;
+                sprite.flipX = false;
+                
             }
             else if (dirX < 0f)
             {
-                anim.SetBool("Running", true);
+                state = MovementState.running;
+                sprite.flipX = true;
             }
             else
             {
-                anim.SetBool("Running", false);
+                state = MovementState.idle;
             }
+
+            if (rb.velocity.y > .1f)
+            {
+            state = MovementState.jumping;
+            }
+
+
+        anim.SetInteger("state", (int)state);
         
     }
 }
