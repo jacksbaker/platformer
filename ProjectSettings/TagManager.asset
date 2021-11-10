@@ -47,12 +47,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Objects with shadow
+    uniqueID: 2543167881
+    locked: 0
   - name: Player
     uniqueID: 3641168615
     locked: 0
   - name: Platform
     uniqueID: 2200957297
     locked: 0
-  - name: Objects
-    uniqueID: 2543167881
+  - name: objects without shadow
+    uniqueID: 1869133335
     locked: 0
