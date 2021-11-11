@@ -5,8 +5,11 @@ using UnityEngine;
 public class PlayerMovment : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private BoxCollider2D coll;
     private Animator anim;
     private SpriteRenderer sprite;
+
+    [SerializeField] private LayerMask jumpableGround;
 
     private float dirX = 0f;
     [SerializeField] private float moveSpeed = 7f;
@@ -21,6 +24,7 @@ public class PlayerMovment : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
+        coll = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -31,7 +35,7 @@ public class PlayerMovment : MonoBehaviour
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
 
 
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("space") && IsGrounded())
         {
             GetComponent<Rigidbody2D>().velocity = new Vector3(rb.velocity.x, jumpForce, 0);
         }
@@ -67,5 +71,10 @@ public class PlayerMovment : MonoBehaviour
 
         anim.SetInteger("state", (int)state);
         
+    }
+
+    private bool IsGrounded()
+    {
+        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
 }
