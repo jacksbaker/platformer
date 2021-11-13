@@ -15058,7 +15058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1994393622}
-  speed: 400
+  speed: 800
   nextWaypointDistance: 3
 --- !u!50 &1287103059
 Rigidbody2D:
