@@ -11,6 +11,8 @@ public class EnemyAI : MonoBehaviour
     public float speed = 200f;
     public float nextWaypointDistance = 3f;
 
+    public Transform enemyGFX;
+
     Path path;
     int currentWaypoint = 0;
     bool reachedEndOfPath = false;
@@ -40,7 +42,7 @@ public class EnemyAI : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (path == null)
             return;
@@ -66,6 +68,15 @@ public class EnemyAI : MonoBehaviour
         if (distance < nextWaypointDistance)
         {
             currentWaypoint++;
+        }
+
+        if (force.x >= 0.01f)
+        {
+            enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
+        }
+        else if (force.x <= -0.01f)
+        {
+            enemyGFX.localScale = new Vector3(1f, 1f, 1f);
         }
     }
 
