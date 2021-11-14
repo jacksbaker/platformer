@@ -15,6 +15,8 @@ public class PlayerMovment : MonoBehaviour
     //[SerializeField] private float jumpCounter = 0f;
     public bool canDoubleJump = false;
 
+    private bool facingRight = true;
+
     private enum MovementState { idle, running, jumping }
 
 
@@ -25,6 +27,8 @@ public class PlayerMovment : MonoBehaviour
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         coll = GetComponent<BoxCollider2D>();
+
+        facingRight = true;
 
         //jumpCounter = 0;
     }
@@ -69,14 +73,24 @@ public class PlayerMovment : MonoBehaviour
         if (dirX > 0f)
         {
             state = MovementState.running;
-            sprite.flipX = false;
 
+            if (!facingRight)
+            {
+                flip();
+                facingRight = true;
+            }
         }
+
         else if (dirX < 0f)
         {
             state = MovementState.running;
-            sprite.flipX = true;
+            
+            if(facingRight)
+            {
+                flip();
+            }
         }
+
         else
         {
             state = MovementState.idle;
@@ -97,5 +111,12 @@ public class PlayerMovment : MonoBehaviour
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
 
 
+    }
+
+    private void flip()
+    {
+        facingRight = !facingRight;
+
+        transform.Rotate(0, 180f, 0f);
     }
 }
