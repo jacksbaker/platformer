@@ -10,11 +10,11 @@ public class Buff : MonoBehaviour
 
     public bool buffActive;
 
-    private GameObject particles;
+    //private GameObject particles;
 
     //public ParticleSystem speedBuffParticles;
 
-    private GameObject gameObjectFound;
+   // private GameObject gameObjectFound;
     //public bool speedBuff;
 
     // Start is called before the first frame update
@@ -24,8 +24,8 @@ public class Buff : MonoBehaviour
 
 
 
-        gameObjectFound = GameObject.Find("Player");
-        ParticleSystem particles = gameObjectFound.GetComponent<ParticleSystem>();
+        //gameObjectFound = GameObject.Find("Player");
+        //ParticleSystem particles = gameObjectFound.GetComponent<ParticleSystem>();
 
         GameObject thePlayer = GameObject.Find("Player");
         PlayerMovment playerScript = thePlayer.GetComponent<PlayerMovment>();
@@ -68,7 +68,7 @@ public class Buff : MonoBehaviour
 
             PlayerMovment.speedBuff = true;
 
-            particles.Play();
+            //particles.Play();
 
             //speedBuffParticles.Play();
 

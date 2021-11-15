@@ -6,6 +6,7 @@ public class PlayerMovment : MonoBehaviour
     private BoxCollider2D coll;
     private Animator anim;
     private SpriteRenderer sprite;
+    private ParticleSystem part;
 
     [SerializeField] private LayerMask jumpableGround;
 
@@ -19,6 +20,8 @@ public class PlayerMovment : MonoBehaviour
 
     static public bool speedBuff;
 
+
+
     private enum MovementState { idle, running, jumping }
 
 
@@ -29,10 +32,13 @@ public class PlayerMovment : MonoBehaviour
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         coll = GetComponent<BoxCollider2D>();
+        part = GetComponent<ParticleSystem>();
 
         facingRight = true;
 
-        speedBuff = false; 
+        speedBuff = false;
+
+        //part.Play();
 
         //jumpCounter = 0;
     }
@@ -45,15 +51,18 @@ public class PlayerMovment : MonoBehaviour
 
         if (speedBuff == true)
         {
+            if(!part.isPlaying) part.Play();
             moveSpeed = 14f;
             
             rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+            
         }
 
         else if (speedBuff == false)
         {
             moveSpeed = 7f;
             rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+            if(part.isPlaying) part.Stop();
         }
 
  
