@@ -16,7 +16,7 @@ public class EnemyDealDamage : MonoBehaviour
         
     }
 
-
+    
     public void OnTriggerEnter2D(Collider2D collision)
     {
         

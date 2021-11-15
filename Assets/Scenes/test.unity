@@ -17728,6 +17728,16 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 4751263746951805157, guid: 372c079337110e04fb6773391ec84e60,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4751263746951805158, guid: 372c079337110e04fb6773391ec84e60,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4751263746951805159, guid: 372c079337110e04fb6773391ec84e60,
         type: 3}
       propertyPath: m_RootOrder
