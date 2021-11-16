@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Buff : MonoBehaviour
+public class DeBuffs : MonoBehaviour
 {
     private BoxCollider2D coll;
 
@@ -10,32 +10,22 @@ public class Buff : MonoBehaviour
 
     public bool buffActive;
 
-    //private GameObject particles;
 
-    //public ParticleSystem speedBuffParticles;
-
-   // private GameObject gameObjectFound;
-    //public bool speedBuff;
 
     // Start is called before the first frame update
     void Start()
     {
         coll = GetComponent<BoxCollider2D>();
 
-
-
-        //gameObjectFound = GameObject.Find("Player");
-        //ParticleSystem particles = gameObjectFound.GetComponent<ParticleSystem>();
-
         GameObject thePlayer = GameObject.Find("Player");
         PlayerMovment playerScript = thePlayer.GetComponent<PlayerMovment>();
-        
-        //speedBuffParticles = GetComponent<ParticleSystem>();
+
+
 
         stopWatch = 0f;
 
         buffActive = false;
-        //speedBuff = false;
+
     }
 
     // Update is called once per frame
@@ -49,7 +39,7 @@ public class Buff : MonoBehaviour
             //Debug.Log("NoBuff");
             buffActive = false;
 
-            PlayerMovment.speedBuff = false;
+            PlayerMovment.slowness = false;
         }
 
     }
@@ -58,26 +48,18 @@ public class Buff : MonoBehaviour
     {
 
 
-        if (collision.tag == "Player" && gameObject.tag == "Speed" && buffActive == !true)
+        if (collision.tag == "Player" && gameObject.tag == "Slowness" && buffActive == !true)
         {
             stopWatch = 8f;
-            //speedBuff = true;
-            Debug.Log("Speed");
+
+            Debug.Log("Slowness");
 
             buffActive = true;
+            
+            PlayerMovment.slowness = true;
 
-            PlayerMovment.speedBuff = true;
-
-            //particles.Play();
-
-            //speedBuffParticles.Play();
 
         }
 
-        
-         
-    
-       
     }
-
 }

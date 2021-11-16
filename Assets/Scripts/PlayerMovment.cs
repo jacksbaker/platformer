@@ -10,7 +10,7 @@ public class PlayerMovment : MonoBehaviour
 
     [SerializeField] private LayerMask jumpableGround;
 
-    public float dirX = 0f;
+    [SerializeField] private float dirX = 0f;
     static public float moveSpeed = 7f;
     [SerializeField] private float jumpForce = 10f;
     //[SerializeField] private float jumpCounter = 0f;
@@ -19,6 +19,7 @@ public class PlayerMovment : MonoBehaviour
     private bool facingRight = true;
 
     static public bool speedBuff;
+    static public bool slowness;
 
 
 
@@ -37,6 +38,7 @@ public class PlayerMovment : MonoBehaviour
         facingRight = true;
 
         speedBuff = false;
+        slowness = false;
 
         //part.Play();
 
@@ -52,20 +54,28 @@ public class PlayerMovment : MonoBehaviour
         if (speedBuff == true)
         {
             if(!part.isPlaying) part.Play();
-            moveSpeed = 14f;
+            moveSpeed = 12f;
             
             rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
-            
         }
 
-        else if (speedBuff == false)
+        else if (slowness == true)
+        {
+            if (!part.isPlaying) part.Play();
+            moveSpeed = 4f;
+
+            rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+
+        }
+
+        else
         {
             moveSpeed = 7f;
             rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
-            if(part.isPlaying) part.Stop();
+            if (part.isPlaying) part.Stop();
         }
 
- 
+
         if (Input.GetKeyDown("space") && IsGrounded())
         {
             //jumpCounter++;
