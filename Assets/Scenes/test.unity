@@ -19657,7 +19657,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stopWatch: 0
-  buffActive: 0
 --- !u!1 &769644571 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1887793776638780257, guid: 418f16d1b2659a94385bb79bc3ce53e4,
@@ -29360,6 +29359,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910984325776337019, guid: 4f2d8781b0acb8a4d9b5f10fe2fc40c4,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910984325776337019, guid: 4f2d8781b0acb8a4d9b5f10fe2fc40c4,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910984325776337019, guid: 4f2d8781b0acb8a4d9b5f10fe2fc40c4,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4910984325776337017, guid: 4f2d8781b0acb8a4d9b5f10fe2fc40c4, type: 3}

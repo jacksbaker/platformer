@@ -55,7 +55,8 @@ public class PlayerMovment : MonoBehaviour
         {
             if(!part.isPlaying) part.Play();
             moveSpeed = 12f;
-            
+            part.startColor = new Color(1, 0, 1, .5f);
+
             rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
         }
 
@@ -63,10 +64,9 @@ public class PlayerMovment : MonoBehaviour
         {
             if (!part.isPlaying) part.Play();
             moveSpeed = 4f;
-            part.startColor = new Color(1, 0, 1, .5f);
+            part.startColor = new Color(109f, 131f, 142f, 255f);
 
             rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
-
         }
 
         else

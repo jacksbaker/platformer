@@ -8,7 +8,7 @@ public class DeBuffs : MonoBehaviour
 
     public float stopWatch;
 
-    public bool buffActive;
+    static public bool buffActiveDeBuff;
 
 
 
@@ -20,11 +20,14 @@ public class DeBuffs : MonoBehaviour
         GameObject thePlayer = GameObject.Find("Player");
         PlayerMovment playerScript = thePlayer.GetComponent<PlayerMovment>();
 
+        GameObject speedBuff = GameObject.Find("Speed");
+        Buff speed = speedBuff.GetComponent<Buff>();
+
 
 
         stopWatch = 0f;
 
-        buffActive = false;
+        //buffActive = false;
 
     }
 
@@ -37,9 +40,11 @@ public class DeBuffs : MonoBehaviour
         if (stopWatch <= 0)
         {
             //Debug.Log("NoBuff");
-            buffActive = false;
+            //buffActive = false;
 
             PlayerMovment.slowness = false;
+            buffActiveDeBuff = Buff.buffActive; 
+            
         }
 
     }
@@ -48,13 +53,13 @@ public class DeBuffs : MonoBehaviour
     {
 
 
-        if (collision.tag == "Player" && gameObject.tag == "Slowness" && buffActive == !true)
+        if (collision.tag == "Player" && gameObject.tag == "Slowness" && buffActiveDeBuff == !true)
         {
             stopWatch = 8f;
 
             Debug.Log("Slowness");
 
-            buffActive = true;
+            buffActiveDeBuff = true;
             
             PlayerMovment.slowness = true;
 

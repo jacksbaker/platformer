@@ -8,7 +8,7 @@ public class Buff : MonoBehaviour
 
     public float stopWatch;
 
-    public bool buffActive;
+    static public bool buffActive;
 
     //private GameObject particles;
 
@@ -29,12 +29,15 @@ public class Buff : MonoBehaviour
 
         GameObject thePlayer = GameObject.Find("Player");
         PlayerMovment playerScript = thePlayer.GetComponent<PlayerMovment>();
-        
+
+        GameObject SlownessBuff = GameObject.Find("Slowness");
+        DeBuffs speed = SlownessBuff.GetComponent<DeBuffs>();
+
         //speedBuffParticles = GetComponent<ParticleSystem>();
 
         stopWatch = 0f;
 
-        buffActive = false;
+        buffActive = DeBuffs.buffActiveDeBuff;
         //speedBuff = false;
     }
 
