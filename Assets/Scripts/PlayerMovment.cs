@@ -21,6 +21,10 @@ public class PlayerMovment : MonoBehaviour
     static public bool speedBuff;
     static public bool slowness;
 
+    public string startPoint;
+
+    private static bool playerExists;
+
 
 
     private enum MovementState { idle, running, jumping }
@@ -43,6 +47,20 @@ public class PlayerMovment : MonoBehaviour
         //part.Play();
 
         //jumpCounter = 0;
+
+        if (!playerExists)
+        {
+            playerExists = true;
+            DontDestroyOnLoad(transform.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+
+
+        }
+
+
     }
 
     // Update is called once per frame
