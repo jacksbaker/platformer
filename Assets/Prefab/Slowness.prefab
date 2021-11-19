@@ -1,6 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3096971528325498840
+--- !u!114 &764454814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449025922716205970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f458a4d35b5ee68438b9402574c00a64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stopWatch: 0
+--- !u!1001 &8846772182922750991
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,6 +23,11 @@ PrefabInstance:
     - target: {fileID: 7988810745280196509, guid: 88e67b9c889607c45b172a9cd5c89cd5,
         type: 3}
       propertyPath: m_Name
+      value: Slowness
+      objectReference: {fileID: 0}
+    - target: {fileID: 7988810745280196509, guid: 88e67b9c889607c45b172a9cd5c89cd5,
+        type: 3}
+      propertyPath: m_TagString
       value: Slowness
       objectReference: {fileID: 0}
     - target: {fileID: 7988810745280196512, guid: 88e67b9c889607c45b172a9cd5c89cd5,
@@ -67,11 +85,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7988810745280196513, guid: 88e67b9c889607c45b172a9cd5c89cd5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7988810745280196515, guid: 88e67b9c889607c45b172a9cd5c89cd5,
         type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 6250056652179388600, guid: 4e81f7ad7d2e57f478162d0339aa33bf,
         type: 3}
-    m_RemovedComponents: []
+    - target: {fileID: 7988810745280196515, guid: 88e67b9c889607c45b172a9cd5c89cd5,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7988810745280196515, guid: 88e67b9c889607c45b172a9cd5c89cd5,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7988810745280196515, guid: 88e67b9c889607c45b172a9cd5c89cd5,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7988810745280196513, guid: 88e67b9c889607c45b172a9cd5c89cd5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 88e67b9c889607c45b172a9cd5c89cd5, type: 3}
+--- !u!1 &1449025922716205970 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7988810745280196509, guid: 88e67b9c889607c45b172a9cd5c89cd5,
+    type: 3}
+  m_PrefabInstance: {fileID: 8846772182922750991}
+  m_PrefabAsset: {fileID: 0}
