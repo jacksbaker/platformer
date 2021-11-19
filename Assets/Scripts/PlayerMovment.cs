@@ -27,6 +27,8 @@ public class PlayerMovment : MonoBehaviour
 
 
 
+
+
     private enum MovementState { idle, running, jumping }
 
 
@@ -73,7 +75,7 @@ public class PlayerMovment : MonoBehaviour
         {
             if(!part.isPlaying) part.Play();
             moveSpeed = 12f;
-            part.startColor = new Color(1, 0, 1, .5f);
+            part.startColor = new Color32(131, 156, 169, 255);
 
             rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
         }
@@ -82,7 +84,7 @@ public class PlayerMovment : MonoBehaviour
         {
             if (!part.isPlaying) part.Play();
             moveSpeed = 4f;
-            part.startColor = new Color(109f, 131f, 142f, 255f);
+            part.startColor = new Color32(109, 131, 142, 255);
 
             rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
         }
@@ -137,7 +139,9 @@ public class PlayerMovment : MonoBehaviour
         else if (dirX < 0f)
         {
             state = MovementState.running;
-            
+            //Debug.Log("Running");
+
+
             if(facingRight)
             {
                 flip();
@@ -146,6 +150,7 @@ public class PlayerMovment : MonoBehaviour
 
         else
         {
+            //Debug.Log("Idle");
             state = MovementState.idle;
         }
 

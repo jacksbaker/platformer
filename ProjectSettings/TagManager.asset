@@ -54,14 +54,14 @@ TagManager:
   - name: objects without shadow
     uniqueID: 1869133335
     locked: 0
-  - name: Player
-    uniqueID: 3641168615
-    locked: 0
   - name: Enemies
     uniqueID: 3042910823
     locked: 0
   - name: Objects with shadow
     uniqueID: 2543167881
+    locked: 0
+  - name: Player
+    uniqueID: 3641168615
     locked: 0
   - name: Fall through platforms
     uniqueID: 1292218089
