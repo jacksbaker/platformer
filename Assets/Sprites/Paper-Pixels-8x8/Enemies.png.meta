@@ -17,6 +17,18 @@ TextureImporter:
   - first:
       213: -8178165961756399743
     second: Enemies_29
+  - first:
+      213: -7829098086036584336
+    second: Enemies_230
+  - first:
+      213: 2728579479829287826
+    second: Enemies_231
+  - first:
+      213: 2363175670851836744
+    second: Enemies_232
+  - first:
+      213: 4041866385873694594
+    second: Enemies_233
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -197,6 +209,90 @@ TextureImporter:
       bones: []
       spriteID: 187a1573361518e80800000000000000
       internalID: -8178165961756399743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemies_230
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 078491665c4795390800000000000000
+      internalID: -7829098086036584336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemies_231
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29315ac849cddd520800000000000000
+      internalID: 2728579479829287826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemies_232
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84b18f280cfabc020800000000000000
+      internalID: 2363175670851836744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemies_233
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28fe79f2018971830800000000000000
+      internalID: 4041866385873694594
       vertices: []
       indices: 
       edges: []
