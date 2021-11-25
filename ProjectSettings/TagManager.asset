@@ -8,6 +8,7 @@ TagManager:
   - Speed
   - Slowness
   - Ladder
+  - Bats
   layers:
   - Default
   - TransparentFX

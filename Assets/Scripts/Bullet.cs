@@ -24,7 +24,7 @@ public class Bullet : MonoBehaviour
     {
         Debug.Log(hitInfo.name);
 
-        if (hitInfo.tag == "Enemy")
+        if (hitInfo.tag == "Enemy" || hitInfo.tag == "Bats")
         {
             var healthComponent = hitInfo.GetComponent<EnemyHealth>();
 
