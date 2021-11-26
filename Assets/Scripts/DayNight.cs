@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class DayNight : MonoBehaviour
 {
@@ -8,11 +9,20 @@ public class DayNight : MonoBehaviour
     public float stopWatch;
     public bool Day;
 
-    public GameObject dayBackground;
-    public GameObject nightBackground;
-    public GameObject bats;
+    private GameObject dayBackground;
+    private GameObject nightBackground;
+    private GameObject bats;
+    private GameObject platforms;
+    private GameObject thePlayer;
+    private GameObject fallThrough;
 
-    
+
+    private Tilemap platform;
+    private SpriteRenderer player;
+    private Tilemap fallThroughPlatform;
+
+
+
 
     //public GameObject[] bats;
 
@@ -25,6 +35,19 @@ public class DayNight : MonoBehaviour
         dayBackground = GameObject.Find("Day");
         nightBackground = GameObject.Find("Night");
         bats = GameObject.Find("Bats");
+        platforms = GameObject.Find("Platforms");
+        thePlayer = GameObject.Find("Player");
+        fallThrough = GameObject.Find("Fall through platforms");
+
+
+
+
+        platform = platforms.GetComponent<Tilemap>();
+        player = thePlayer.GetComponent<SpriteRenderer>();
+        fallThroughPlatform = fallThrough.GetComponent<Tilemap>();
+
+       //GetComponent<SpriteRenderer>().color = Color.green;
+
 
 
         //bat = GameObject.FindGameObjectsWithTag("Bat");
@@ -58,6 +81,10 @@ public class DayNight : MonoBehaviour
 
             bats.SetActive(false);
 
+            platform.color = new Color32(255, 255, 255, 255);
+            player.color = new Color32(255, 255, 255, 255);
+            fallThroughPlatform.color = new Color32(255, 255, 255, 255);
+
             //GameObject.FindGameObjectWithTag("Bats").SetActive(false);
 
             Day = false;
@@ -72,6 +99,10 @@ public class DayNight : MonoBehaviour
             nightBackground.SetActive(true);
 
             bats.SetActive(true);
+
+            platform.color = new Color32(161, 159, 159, 255);
+            player.color = new Color32(161, 159, 159, 255);
+            fallThroughPlatform.color = new Color32(161, 159, 159, 255);
 
             //.FindGameObjectWithTag("Bats").SetActive(true);
 

@@ -9,6 +9,7 @@ TagManager:
   - Slowness
   - Ladder
   - Bats
+  - Vine
   layers:
   - Default
   - TransparentFX
