@@ -15,12 +15,13 @@ public class DayNight : MonoBehaviour
     private GameObject platforms;
     private GameObject thePlayer;
     private GameObject fallThrough;
-    private GameObject [] vine;
+    private GameObject vine;
+    //private GameObject [] vine;
 
     private Tilemap platform;
     private SpriteRenderer player;
     private Tilemap fallThroughPlatform;
-    private Renderer vines;
+    //private Renderer vines;
 
 
 
@@ -39,7 +40,8 @@ public class DayNight : MonoBehaviour
         platforms = GameObject.Find("Platforms");
         thePlayer = GameObject.Find("Player");
         fallThrough = GameObject.Find("Fall through platforms");
-        vine = GameObject.FindGameObjectsWithTag("VineSprites");
+        vine = GameObject.Find("Vines");
+        //vine = GameObject.FindGameObjectsWithTag("VineSprites");
 
 
 
@@ -84,6 +86,8 @@ public class DayNight : MonoBehaviour
 
             bats.SetActive(false);
 
+            vine.SetActive(true);
+
             platform.color = new Color32(255, 255, 255, 255);
             player.color = new Color32(255, 255, 255, 255);
             fallThroughPlatform.color = new Color32(255, 255, 255, 255);
@@ -102,6 +106,10 @@ public class DayNight : MonoBehaviour
             nightBackground.SetActive(true);
 
             bats.SetActive(true);
+
+            vine.SetActive(false);
+
+
 
             platform.color = new Color32(161, 159, 159, 255);
             player.color = new Color32(161, 159, 159, 255);
