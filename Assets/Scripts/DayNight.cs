@@ -16,11 +16,17 @@ public class DayNight : MonoBehaviour
     private GameObject thePlayer;
     private GameObject fallThrough;
     private GameObject vine;
+    private GameObject tress;
+    private GameObject objects;
+    private GameObject destroyablePlatforms;
     //private GameObject [] vine;
 
     private Tilemap platform;
     private SpriteRenderer player;
     private Tilemap fallThroughPlatform;
+    private Tilemap trees;
+    private Tilemap objectColour;
+    private Tilemap destroyablePlatform;
     //private Renderer vines;
 
 
@@ -41,6 +47,9 @@ public class DayNight : MonoBehaviour
         thePlayer = GameObject.Find("Player");
         fallThrough = GameObject.Find("Fall through platforms");
         vine = GameObject.Find("Vines");
+        tress = GameObject.Find("Tress");
+        objects = GameObject.Find("Objects");
+        destroyablePlatforms = GameObject.Find("Destroyable platform");
         //vine = GameObject.FindGameObjectsWithTag("VineSprites");
 
 
@@ -49,9 +58,12 @@ public class DayNight : MonoBehaviour
         platform = platforms.GetComponent<Tilemap>();
         player = thePlayer.GetComponent<SpriteRenderer>();
         fallThroughPlatform = fallThrough.GetComponent<Tilemap>();
-        
+        trees = tress.GetComponent<Tilemap>();
+        objectColour = objects.GetComponent<Tilemap>();
+        destroyablePlatform = destroyablePlatforms.GetComponent<Tilemap>();
 
-       //GetComponent<SpriteRenderer>().color = Color.green;
+
+        //GetComponent<SpriteRenderer>().color = Color.green;
 
 
 
@@ -91,6 +103,9 @@ public class DayNight : MonoBehaviour
             platform.color = new Color32(255, 255, 255, 255);
             player.color = new Color32(255, 255, 255, 255);
             fallThroughPlatform.color = new Color32(255, 255, 255, 255);
+            trees.color = new Color32(255, 255, 255, 255);
+            objectColour.color = new Color(255, 255, 255, 255);
+            destroyablePlatform.color = new Color32(255, 255, 255, 255);
 
             //GameObject.FindGameObjectWithTag("Bats").SetActive(false);
 
@@ -114,6 +129,9 @@ public class DayNight : MonoBehaviour
             platform.color = new Color32(161, 159, 159, 255);
             player.color = new Color32(161, 159, 159, 255);
             fallThroughPlatform.color = new Color32(161, 159, 159, 255);
+            trees.color = new Color32(161, 159, 159, 255);
+            objectColour.color = new Color(161, 159, 159, 255);
+            destroyablePlatform.color = new Color32(161, 159, 159, 255);
 
             //.FindGameObjectWithTag("Bats").SetActive(true);
 

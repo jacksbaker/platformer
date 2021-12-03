@@ -31,6 +31,11 @@ public class LevelToLoad : MonoBehaviour
         {
             Application.LoadLevel(levelToLoad);
             thePlayer.startPoint = exitPoint;
+
+            if(GameObject.Find("Stopwatch").GetComponent<StopWatch>().stopwatchActive == true)
+            {
+                GameObject.Find("Stopwatch").GetComponent<StopWatch>().start = false;
+            }
         }
     }
 }

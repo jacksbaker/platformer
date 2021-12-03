@@ -10,6 +10,11 @@ TagManager:
   - Ladder
   - Bats
   - Vine
+  - Rubber
+  - DestroyablePlatform
+  - EndScreenPlayer
+  - Lefty
+  - Righty
   layers:
   - Default
   - TransparentFX
