@@ -15,6 +15,7 @@ TagManager:
   - EndScreenPlayer
   - Lefty
   - Righty
+  - Boss
   layers:
   - Default
   - TransparentFX

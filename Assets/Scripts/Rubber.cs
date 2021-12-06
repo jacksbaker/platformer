@@ -17,6 +17,7 @@ public class Rubber : MonoBehaviour
         rubberActive = true;
 
         theRubber = GameObject.Find("RubberSprite");
+
     }
 
     // Update is called once per frame
@@ -27,8 +28,9 @@ public class Rubber : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player" && rubberActive == true && gameObject.tag == ("Rubber"))
+        if (collision.tag == "Player" && rubberActive == true)
         {
+            if(gameObject.tag == ("QueenBeeRubber") || gameObject.tag == ("UndeadBeeRubber") || gameObject.tag == ("KingSlimeRubber"))
             Debug.Log("Player");
             playerRubber = true;
             theRubber.SetActive(false);

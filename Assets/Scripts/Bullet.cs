@@ -24,13 +24,21 @@ public class Bullet : MonoBehaviour
     {
         Debug.Log(hitInfo.name);
 
-        if (hitInfo.tag == "Enemy" || hitInfo.tag == "Bats")
+        if (hitInfo.tag == "Enemy" || hitInfo.tag == "Bats" || hitInfo.tag == "Boss")
         {
             var healthComponent = hitInfo.GetComponent<EnemyHealth>();
+
+            var queenBee = hitInfo.GetComponent<QueenBee>();
 
             if (healthComponent != null)
             {
                 healthComponent.takeDamage(1);
+            }
+
+            else if(queenBee != null)
+            {
+                queenBee.takeDamage(1);
+
             }
         }
 
