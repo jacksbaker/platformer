@@ -12,11 +12,6 @@ public class QueenBee : MonoBehaviour
     private GameObject queenBeeSprite;
     private SpriteRenderer queenBeeColor;
 
-    public Transform firePoint;
-    public GameObject bulletPrefab;
-
-    public float stopWatch;
-
     private ParticleSystem part;
 
     private GameObject rubber;
@@ -30,6 +25,7 @@ public class QueenBee : MonoBehaviour
 
 
         GameObject queenBee = GameObject.Find("Queen Bee");
+        queenBeeActive = GameObject.Find("Queen Bee");
         EnemyAI queenBeeScript  = queenBee.GetComponent<EnemyAI>();
 
         queenBeeSprite = GameObject.Find("QueenBeeSprite");
@@ -40,7 +36,7 @@ public class QueenBee : MonoBehaviour
         rubber = GameObject.Find("QueenBeeRubber");
         rubber.SetActive(false);
 
-        queenBeeActive = GameObject.Find("Queen Bee");
+        
 
         
 
@@ -105,11 +101,5 @@ public class QueenBee : MonoBehaviour
         
     }
 
-    //void Shoot()
-    //{
-    //    //shooting logic 
-
-    //    Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-
-    //}
+ 
 }

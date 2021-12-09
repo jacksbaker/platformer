@@ -11,6 +11,11 @@ public class BossSpawner : MonoBehaviour
     private GameObject beeActive;
 
     private GameObject queenUndeadBee;
+    private GameObject kingSlime;
+    private GameObject slimeRoom;
+    private GameObject slimeActive;
+    private GameObject slimeFinder;
+
 
     private GameObject bossFinderBee;
 
@@ -24,9 +29,13 @@ public class BossSpawner : MonoBehaviour
 
         queenBee = GameObject.Find("Queen Bee");
         queenUndeadBee = GameObject.Find("Queen Undead Bee");
+        kingSlime = GameObject.Find("KingSlime");
 
         queenBeeRoom = GameObject.Find("Queen Bee Room");
         bossFinderBee = GameObject.Find("BeeBossActivation");
+        slimeFinder = GameObject.Find("KingSlimeActivation");
+        slimeRoom = GameObject.Find("King Slime Room");
+        
 
         queenBee.SetActive(false);
         queenUndeadBee.SetActive(false);
@@ -35,9 +44,17 @@ public class BossSpawner : MonoBehaviour
 
         bossFinderBee.SetActive(true);
 
+        kingSlime.SetActive(false);
+
+        slimeFinder.SetActive(true);
+
+        slimeRoom.SetActive(false);
+
         GameObject beeActive = GameObject.Find("BeeBossActivation");
         BeeActivation queenBeeScript = queenBee.GetComponent<BeeActivation>();
 
+        GameObject slimeActive = GameObject.Find("KingSlimeActivation");
+        SlimeActivation kingSlimeScript = slimeFinder.GetComponent<SlimeActivation>();
     }
 
     // Update is called once per frame
@@ -52,7 +69,7 @@ public class BossSpawner : MonoBehaviour
             bossFinderBee.SetActive(false);
         }
 
-        else if (BeeActivation.beeActivation && boss == 1)
+        else if (BeeActivation.beeActivation == true && boss == 1)
         {
             queenUndeadBee.SetActive(true);
             queenBeeRoom.SetActive(true);
@@ -60,9 +77,12 @@ public class BossSpawner : MonoBehaviour
             bossFinderBee.SetActive(false);
         }
 
-        else if (gameObject.name == "SlimeBossActivation" && boss == 2)
+        else if (SlimeActivation.slimeActivation == true && boss == 2)
         {
-            Debug.Log("King Slime");
+            SlimeActivation.slimeActivation = false;
+            kingSlime.SetActive(true);
+            slimeFinder.SetActive(false);
+            slimeRoom.SetActive(true);
         }
     }
 
