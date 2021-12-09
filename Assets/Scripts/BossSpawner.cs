@@ -9,22 +9,31 @@ public class BossSpawner : MonoBehaviour
     private GameObject queenBeeRoom;
 
     private GameObject beeActive;
-    
 
+    private GameObject queenUndeadBee;
+
+    private GameObject bossFinderBee;
 
     public int boss;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        boss = Random.Range(0, 4);
+        boss = Random.Range(0, 3);
 
         queenBee = GameObject.Find("Queen Bee");
+        queenUndeadBee = GameObject.Find("Queen Undead Bee");
 
-        queenBeeRoom = GameObject.Find("Queen Bee Room");   
+        queenBeeRoom = GameObject.Find("Queen Bee Room");
+        bossFinderBee = GameObject.Find("BeeBossActivation");
 
         queenBee.SetActive(false);
+        queenUndeadBee.SetActive(false);
 
         queenBeeRoom.SetActive(false);
+
+        bossFinderBee.SetActive(true);
 
         GameObject beeActive = GameObject.Find("BeeBossActivation");
         BeeActivation queenBeeScript = queenBee.GetComponent<BeeActivation>();
@@ -34,20 +43,24 @@ public class BossSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (BeeActivation.beeActivation == true && boss == 1)
+        if (BeeActivation.beeActivation == true && boss == 0)
         {
             
             queenBee.SetActive(true);
             queenBeeRoom.SetActive(true);
             BeeActivation.beeActivation = false;
+            bossFinderBee.SetActive(false);
         }
 
-        else if (gameObject.name == "BeeBossActivation" && boss == 2)
+        else if (BeeActivation.beeActivation && boss == 1)
         {
-            Debug.Log("Undead Bee");
+            queenUndeadBee.SetActive(true);
+            queenBeeRoom.SetActive(true);
+            BeeActivation.beeActivation = false;
+            bossFinderBee.SetActive(false);
         }
 
-        else if (gameObject.name == "SlimeBossActivation" && boss == 3)
+        else if (gameObject.name == "SlimeBossActivation" && boss == 2)
         {
             Debug.Log("King Slime");
         }
