@@ -49,7 +49,8 @@ public class PlayerMovment : MonoBehaviour
         //part.Play();
 
         //jumpCounter = 0;
-
+        
+        /*
         if (!playerExists)
         {
             playerExists = true;
@@ -61,7 +62,7 @@ public class PlayerMovment : MonoBehaviour
 
 
         }
-
+        */
 
     }
 

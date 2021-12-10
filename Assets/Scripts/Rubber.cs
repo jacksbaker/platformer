@@ -12,8 +12,8 @@ public class Rubber : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.SetActive(true);
-        //playerRubber = false;
+        //gameObject.SetActive(true);
+        playerRubber = false;
         rubberActive = true;
 
         theRubber = GameObject.Find("RubberSprite");
@@ -30,11 +30,14 @@ public class Rubber : MonoBehaviour
     {
         if (collision.tag == "Player" && rubberActive == true)
         {
-            if(gameObject.tag == ("QueenBeeRubber") || gameObject.tag == ("UndeadBeeRubber") || gameObject.tag == ("KingSlimeRubber"))
-            Debug.Log("Player");
-            playerRubber = true;
-            theRubber.SetActive(false);
-            rubberActive = false;
+            if(gameObject.name == ("QueenBeeRubber") || gameObject.tag == ("UndeadBeeRubber") || gameObject.tag == ("KingSlimeRubber"))
+            {
+                Debug.Log("Player");
+                playerRubber = true;
+                theRubber.SetActive(false);
+                rubberActive = false;
+            }
+            
 
         }
         /*

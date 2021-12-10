@@ -30,6 +30,8 @@ public class Bullet : MonoBehaviour
 
             var queenBee = hitInfo.GetComponent<QueenBee>();
 
+            var kingSlimes = hitInfo.GetComponent<kingSlime>();
+
             if (healthComponent != null)
             {
                 healthComponent.takeDamage(1);
@@ -38,6 +40,12 @@ public class Bullet : MonoBehaviour
             else if(queenBee != null)
             {
                 queenBee.takeDamage(1);
+
+            }
+
+            else if (kingSlimes != null)
+            {
+                kingSlimes.takeDamage(1);
 
             }
         }

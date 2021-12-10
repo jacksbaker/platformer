@@ -94,10 +94,8 @@ public class kingSlime : MonoBehaviour
 
             if (currentHealth <= 3)
             {
-                damage = 2;
-                EnemyAI.speed = 800f;
-               
-                if (!part.isPlaying) part.Play();
+                damage = 5;
+              
             }
         }
 

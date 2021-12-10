@@ -14,9 +14,11 @@ public class QueenBee : MonoBehaviour
 
     private ParticleSystem part;
 
-    private GameObject rubber;
+    public GameObject rubber;
 
     private GameObject queenBeeActive;
+
+    private GameObject queenBeeRoom;
 
 
     // Start is called before the first frame update
@@ -33,12 +35,14 @@ public class QueenBee : MonoBehaviour
 
         part = GetComponent<ParticleSystem>();
 
-        rubber = GameObject.Find("QueenBeeRubber");
-        rubber.SetActive(false);
+        queenBeeRoom = GameObject.Find("Queen Bee Room");
 
-        
+        //rubber = GameObject.Find("QueenBeeRubber");
+        //rubber.SetActive(false);
 
-        
+
+
+
 
         currentHealth = 10;
         //currentHealth = maxHealth;
@@ -78,6 +82,7 @@ public class QueenBee : MonoBehaviour
             Debug.Log("Boss dead");
             queenBeeActive.SetActive(false);
             rubber.SetActive(true);
+            queenBeeRoom.SetActive(false);
 
 
         }

@@ -1354,12 +1354,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2141834752433341205, guid: dc55b10c916d5134d8e603fb703c3358,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2141834752433341207, guid: dc55b10c916d5134d8e603fb703c3358,
         type: 3}
       propertyPath: m_Name
       value: Bee 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2141834752433341205, guid: dc55b10c916d5134d8e603fb703c3358, type: 3}
+    - {fileID: 2141834752433341206, guid: dc55b10c916d5134d8e603fb703c3358, type: 3}
+    - {fileID: 2141834752433341215, guid: dc55b10c916d5134d8e603fb703c3358, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dc55b10c916d5134d8e603fb703c3358, type: 3}
 --- !u!1 &536358818
 GameObject:
@@ -22974,7 +22982,8 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7988810745280196513, guid: 88e67b9c889607c45b172a9cd5c89cd5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 88e67b9c889607c45b172a9cd5c89cd5, type: 3}
 --- !u!1 &1451079379
 GameObject:
@@ -23204,6 +23213,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639824884}
   m_CullTransparentMesh: 1
+--- !u!1 &1653853152 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 929655959155189429, guid: 33e59bd151f6b824e8be22b7ae0a9d9b,
+    type: 3}
+  m_PrefabInstance: {fileID: 929655957952940680}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1653853153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653853152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6f47d7f7e29851449bfb2a8adfc91a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelToLoad: Start
 --- !u!1 &1815701382
 GameObject:
   m_ObjectHideFlags: 0
@@ -26078,7 +26106,8 @@ PrefabInstance:
       propertyPath: exitPoint
       value: MainLevelStart
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 929655959155189448, guid: 33e59bd151f6b824e8be22b7ae0a9d9b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 33e59bd151f6b824e8be22b7ae0a9d9b, type: 3}
 --- !u!1001 &7541412077485591355
 PrefabInstance:
