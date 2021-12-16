@@ -6,9 +6,9 @@ using Pathfinding;
 public class UndeadAI : MonoBehaviour
 {
     //private GameObject player;
-    //private Transform playerTarget;
+    private GameObject playerTarget;
 
-    public Transform target;
+    //public Transform target;
 
     static public float speed = 200f;
     public float nextWaypointDistance = 3f;
@@ -30,7 +30,7 @@ public class UndeadAI : MonoBehaviour
 
         InvokeRepeating("UpdatePath", 0f, .5f);
 
-        //playerTarget = GameObject.Find("Player");
+        playerTarget = GameObject.Find("Player");
         
 
     }
@@ -39,7 +39,7 @@ public class UndeadAI : MonoBehaviour
     {
         if (seeker.IsDone())
         {
-            seeker.StartPath(rb.position, target.position, OnPathComplete);
+            seeker.StartPath(rb.position, playerTarget.transform.position, OnPathComplete);
         }
 
     }

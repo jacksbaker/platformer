@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 2141834752433341202}
   - component: {fileID: 2141834752433341203}
   - component: {fileID: 2141834752433341204}
-  - component: {fileID: 2141834752433341205}
   - component: {fileID: 2141834752433341206}
   - component: {fileID: 2141834752433341201}
   - component: {fileID: 2141834752433341200}
+  - component: {fileID: 8662713969352208893}
   m_Layer: 0
   m_Name: UndeadBee
   m_TagString: Enemy
@@ -74,21 +74,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2141834752433341205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2141834752433341207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f1ef03ed8059e34c8fdb6d719f70248, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 636196425535183932, guid: 3db9e5bcb597aac45bcefde9e182e49b, type: 3}
-  nextWaypointDistance: 3
-  enemyGFX: {fileID: 8156907223665591171}
 --- !u!114 &2141834752433341206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,6 +139,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1093769, y: 1.0674949}
   m_EdgeRadius: 0
+--- !u!114 &8662713969352208893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141834752433341207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3b6b85da46d2374ca3e3bf6f90d17d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextWaypointDistance: 3
+  enemyGFX: {fileID: 8156907223665591171}
 --- !u!1 &8156907223665591172
 GameObject:
   m_ObjectHideFlags: 0

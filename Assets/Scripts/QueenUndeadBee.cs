@@ -47,6 +47,8 @@ public class QueenUndeadBee : MonoBehaviour
 
     private GameObject queenUndeadBeeActive;
 
+    private GameObject queenBeeRoom;
+
     private SpawnState state = SpawnState.COUNTING;
 
     // Start is called before the first frame update
@@ -66,6 +68,8 @@ public class QueenUndeadBee : MonoBehaviour
         rubber.SetActive(false);
 
         queenUndeadBeeActive = GameObject.Find("Queen Undead Bee");
+
+        queenBeeRoom = GameObject.Find("Queen Bee Room");
 
 
 
@@ -152,6 +156,7 @@ public class QueenUndeadBee : MonoBehaviour
             Debug.Log("Boss dead");
             queenUndeadBeeActive.SetActive(false);
             rubber.SetActive(true);
+            queenBeeRoom.SetActive(false);
 
 
         }

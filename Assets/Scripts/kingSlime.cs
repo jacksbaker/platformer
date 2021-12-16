@@ -39,7 +39,7 @@ public class kingSlime : MonoBehaviour
         rubber = GameObject.Find("KingSlimeRubber");
         rubber.SetActive(false);
 
-        kingSlimeActive = GameObject.Find("King Slime");
+        kingSlimeActive = GameObject.Find("KingSlime");
 
 
 
