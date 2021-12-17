@@ -28,8 +28,8 @@ public class kingSlime : MonoBehaviour
     {
 
 
-        GameObject queenBee = GameObject.Find("King Slime");
-        EnemyAI queenBeeScript = queenBee.GetComponent<EnemyAI>();
+        GameObject kingSlime = GameObject.Find("KingSlime");
+        EnemyAI kingSlimeScript = kingSlime.GetComponent<EnemyAI>();
 
         kingSlimeSprite = GameObject.Find("KingSlimeSprite");
        

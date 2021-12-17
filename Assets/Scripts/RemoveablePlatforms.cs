@@ -29,7 +29,7 @@ public class RemoveablePlatforms : MonoBehaviour
     {
         Debug.Log("Hi");
 
-        if (collision.tag == "Player" && gameObject.tag == "DestroyablePlatform" && GameObject.Find("Rubber").GetComponent<Rubber>().playerRubber == true)
+        if (collision.tag == "Player" && gameObject.tag == "DestroyablePlatform" && GameObject.Find("QueenBeeRubber").GetComponent<Rubber>().playerRubber == true || GameObject.Find("KingSlimeRubber").GetComponent<Rubber>().playerRubber == true)
         {
             Debug.Log("Destroy");
             gameObject.SetActive(false);
